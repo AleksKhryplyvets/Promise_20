@@ -11,7 +11,7 @@
 
       function myAllSettled(promises){
         const result = promises.map((prom) => {
-            return prom.resolve()
+            return new Promise.resolve(prom)
             .then((value) => {
                return {
                   status: "fulfilled",
