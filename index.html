@@ -10,8 +10,8 @@
    <script>
 
       function myAllSettled(promises){
-         promises.map((prom) => {
-            return prom
+        const result = promises.map((prom) => {
+            return prom.resolve()
             .then((value) => {
                return {
                   status: "fulfilled",
@@ -25,6 +25,7 @@
                }
             })
          })
+        return result
       }
    </script>
 </body>
